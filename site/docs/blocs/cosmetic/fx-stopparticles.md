@@ -1,0 +1,35 @@
+---
+sidebar_position: 10
+title: "FX.StopParticles"
+sidebar_label: "StopParticles"
+description: "StopParticles"
+---
+
+# StopParticles
+
+`FX.StopParticles`
+
+Le module ne donne pas de phrase pour ce bloc. Le rôle se lit sur les entrées et les sorties.
+
+Action. Le fil blanc entre, le bloc fait son effet, le fil blanc sort.
+
+Le fil blanc est l'ordre. Le fil bleu est une valeur. Un fil bleu gagne sur le défaut.
+
+## Entrées
+
+| Sur le graphe | Interne | Type | Défaut | Notes |
+| --- | --- | --- | --- | --- |
+| départ | `exec` | flux |  |  |
+| cible | `entity` | entité |  |  |
+
+## Sorties
+
+| Sur le graphe | Interne | Type | Défaut | Notes |
+| --- | --- | --- | --- | --- |
+| suite | `then` | flux |  |  |
+
+## Détail
+
+- **départ** (`exec`). Le fil blanc arrive ici. C'est l'ordre: sans ce fil, le bloc ne démarre pas.
+- **cible** (`entity`, entité). Relie un fil bleu.
+- **suite** (`then`). Sors d'ici en fil blanc pour enchaîner un autre bloc.

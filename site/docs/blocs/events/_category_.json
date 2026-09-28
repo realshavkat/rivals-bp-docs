@@ -1,0 +1,8 @@
+{
+  "label": "Déclencheurs",
+  "position": 0,
+  "link": {
+    "type": "generated-index",
+    "description": "Le bloc qui démarre le graphe. Rien ne se branche devant."
+  }
+}

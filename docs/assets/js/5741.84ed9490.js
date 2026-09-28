@@ -1,0 +1,1 @@
+(self.webpackChunkrivals_bp_docs=self.webpackChunkrivals_bp_docs||[]).push([[5741],{5741:()=>{}}]);

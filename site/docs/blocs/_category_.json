@@ -1,0 +1,9 @@
+{
+  "label": "Blocs",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "slug": "/blocs",
+    "description": "Une page par bloc. Choisis une famille, puis le bloc. Le fil blanc est l'ordre, le fil bleu est une valeur."
+  }
+}

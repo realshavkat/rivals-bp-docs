@@ -1,0 +1,8 @@
+{
+  "label": "Ballon",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Lire ou frapper le ballon."
+  }
+}

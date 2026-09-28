@@ -1,8 +1,12 @@
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
-python build.py
+python generate.py
+Set-Location site
+if (-not (Test-Path node_modules)) { npm install }
+npm run build
+Set-Location $PSScriptRoot
 if (-not (Test-Path .git)) {
-    Write-Host "Pas encore un dépôt git. Lance d'abord la création du repo."
+    Write-Host "Pas encore un dépôt git."
     exit 1
 }
 git add -A

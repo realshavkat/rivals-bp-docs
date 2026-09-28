@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap");
+
+:root {
+  --ifm-color-primary: #0e7490;
+  --ifm-color-primary-dark: #0c6982;
+  --ifm-color-primary-darker: #0b637a;
+  --ifm-color-primary-darkest: #095165;
+  --ifm-color-primary-light: #108eae;
+  --ifm-color-primary-lighter: #1194b6;
+  --ifm-color-primary-lightest: #14a8cf;
+  --ifm-code-font-size: 90%;
+  --ifm-heading-font-family: "Rajdhani", "Segoe UI", sans-serif;
+  --ifm-font-size-base: 17px;
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: #38bdf8;
+  --ifm-color-primary-dark: #1eb4f7;
+  --ifm-color-primary-darker: #11aff6;
+  --ifm-color-primary-darkest: #0894d2;
+  --ifm-color-primary-light: #52c6f9;
+  --ifm-color-primary-lighter: #5fcbf9;
+  --ifm-color-primary-lightest: #86d8fb;
+  --ifm-background-color: #09090b;
+  --ifm-background-surface-color: #111113;
+  --ifm-navbar-background-color: #0c0c0e;
+  --ifm-footer-background-color: #0c0c0e;
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.08);
+  --ifm-hover-overlay: rgba(56, 189, 248, 0.08);
+}
+
+.markdown h1 {
+  font-size: 2.2rem;
+  letter-spacing: -0.02em;
+}
+
+article table {
+  display: table;
+  width: 100%;
+}

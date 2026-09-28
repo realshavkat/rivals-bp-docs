@@ -1,0 +1,8 @@
+{
+  "label": "Actions",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Une action de jeu entière dans un seul bloc: tir, dash, frappe."
+  }
+}

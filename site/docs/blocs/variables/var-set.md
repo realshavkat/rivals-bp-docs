@@ -1,0 +1,39 @@
+---
+sidebar_position: 2
+title: "Var.Set"
+sidebar_label: "Set"
+description: "Enregistre une variable."
+---
+
+# Enregistrer une valeur
+
+`Var.Set`
+
+Enregistre une variable.
+
+Action. Le fil blanc entre, le bloc fait son effet, le fil blanc sort.
+
+Dans la vue Code, le verbe est [`set`](/langage/verbes#set) : `set(name, value)`.
+
+Le fil blanc est l'ordre. Le fil bleu est une valeur. Un fil bleu gagne sur le défaut.
+
+## Entrées
+
+| Sur le graphe | Interne | Type | Défaut | Notes |
+| --- | --- | --- | --- | --- |
+| départ | `exec` | flux |  |  |
+| nom | `name` | texte |  | écrit dans le bloc |
+| valeur | `value` | quelconque |  | optionnel |
+
+## Sorties
+
+| Sur le graphe | Interne | Type | Défaut | Notes |
+| --- | --- | --- | --- | --- |
+| suite | `then` | flux |  |  |
+
+## Détail
+
+- **départ** (`exec`). Le fil blanc arrive ici. C'est l'ordre: sans ce fil, le bloc ne démarre pas.
+- **nom** (`name`, texte). Tu l'écris dans le bloc. Un fil ne peut pas la remplacer.
+- **valeur** (`value`, quelconque). Le fil peut rester vide.
+- **suite** (`then`). Sors d'ici en fil blanc pour enchaîner un autre bloc.

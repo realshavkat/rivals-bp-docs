@@ -1,0 +1,39 @@
+---
+sidebar_position: 6
+title: "Player.SetCustomSpeed"
+sidebar_label: "SetCustomSpeed"
+description: "Vitesse d'animation custom (PLAYER:SetCustomSpeed), retirée après 'duration'."
+---
+
+# Vitesse d'animation custom (PLAYER:SetCustomSpeed), retirée après 'duration'
+
+`Player.SetCustomSpeed`
+
+Vitesse d'animation custom (PLAYER:SetCustomSpeed), retirée après 'duration'.
+
+Action qui peut attendre. La suite blanche part plus tard, quand l'attente est finie.
+
+Le fil blanc est l'ordre. Le fil bleu est une valeur. Un fil bleu gagne sur le défaut.
+
+## Entrées
+
+| Sur le graphe | Interne | Type | Défaut | Notes |
+| --- | --- | --- | --- | --- |
+| départ | `exec` | flux |  |  |
+| joueur | `player` | joueur |  |  |
+| vitesse | `speed` | nombre | `2` | de 0 à 10 |
+| durée | `duration` | nombre | `1` | de 0.05 à … |
+
+## Sorties
+
+| Sur le graphe | Interne | Type | Défaut | Notes |
+| --- | --- | --- | --- | --- |
+| suite | `then` | flux |  |  |
+
+## Détail
+
+- **départ** (`exec`). Le fil blanc arrive ici. C'est l'ordre: sans ce fil, le bloc ne démarre pas.
+- **joueur** (`player`, joueur). Relie un fil bleu.
+- **vitesse** (`speed`, nombre). Sans fil bleu, le défaut est utilisé. Défaut: `2`. Borné de 0 à 10.
+- **durée** (`duration`, nombre). Sans fil bleu, le défaut est utilisé. Défaut: `1`. Borné de 0.05 à ….
+- **suite** (`then`). Sors d'ici en fil blanc pour enchaîner un autre bloc.

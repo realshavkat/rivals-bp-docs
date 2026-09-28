@@ -1,0 +1,8 @@
+{
+  "label": "Équilibrage",
+  "position": 25,
+  "link": {
+    "type": "generated-index",
+    "description": "Valeurs prévues pour l'équilibrage."
+  }
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrivals_bp_docs=self.webpackChunkrivals_bp_docs||[]).push([[4921],{1597:s=>{s.exports=JSON.parse('{"name":"@easyops-cn/docusaurus-search-local","id":"default"}')}}]);

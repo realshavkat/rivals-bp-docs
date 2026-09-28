@@ -1,0 +1,9 @@
+{
+  "label": "Langage",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "/langage",
+    "description": "La vue Code écrit le même graphe. Le texte n'est jamais exécuté comme du Lua."
+  }
+}

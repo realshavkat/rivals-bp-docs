@@ -1,0 +1,8 @@
+{
+  "label": "Déclencheurs liés",
+  "position": 24,
+  "link": {
+    "type": "generated-index",
+    "description": "Réagir au prochain essai de technique."
+  }
+}

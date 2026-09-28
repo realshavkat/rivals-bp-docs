@@ -1,0 +1,8 @@
+{
+  "label": "Enchaînement",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "L'ordre: attendre, choisir, répéter."
+  }
+}
