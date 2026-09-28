@@ -1,9 +1,9 @@
 {
   "label": "Déclencheurs",
   "position": 0,
+  "className": "cat-events",
   "link": {
     "type": "generated-index",
     "description": "Le bloc qui démarre le graphe. Rien ne se branche devant."
-  },
-  "className": "cat-events"
+  }
 }

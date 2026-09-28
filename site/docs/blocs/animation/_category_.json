@@ -1,9 +1,9 @@
 {
   "label": "Animations",
   "position": 21,
+  "className": "cat-animation",
   "link": {
     "type": "generated-index",
     "description": "Animations du personnage."
-  },
-  "className": "cat-animation"
+  }
 }

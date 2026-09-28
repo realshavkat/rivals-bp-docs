@@ -17,6 +17,18 @@ Présent seulement sur: test.
 
 Il se réveille sur l'événement `OnTest`.
 
+## Exemple
+
+Le même bloc, écrit dans la vue Code. Les nombres et les textes sont des valeurs de départ du module, à changer.
+
+```text
+on test {
+    notify("déclenché")
+}
+```
+
+La grammaire complète est dans [Exemples](/langage/exemples).
+
 ## Entrées
 
 Aucune.

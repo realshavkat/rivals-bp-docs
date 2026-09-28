@@ -1,9 +1,9 @@
 {
   "label": "Touches",
   "position": 23,
+  "className": "cat-input",
   "link": {
     "type": "generated-index",
     "description": "Attendre une touche."
-  },
-  "className": "cat-input"
+  }
 }

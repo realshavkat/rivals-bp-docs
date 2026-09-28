@@ -1,9 +1,9 @@
 {
   "label": "Technique",
   "position": 17,
+  "className": "cat-skill",
   "link": {
     "type": "generated-index",
     "description": "Le lancement en cours: lanceur, niveau, paramètre."
-  },
-  "className": "cat-skill"
+  }
 }

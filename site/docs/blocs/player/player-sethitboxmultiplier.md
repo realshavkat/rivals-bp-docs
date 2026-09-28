@@ -17,6 +17,18 @@ Dans la vue Code, le verbe est [`hitbox`](/langage/verbes#hitbox) : `hitbox(valu
 
 Le fil blanc est l'ordre. Le fil bleu est une valeur. Un fil bleu gagne sur le défaut.
 
+## Exemple
+
+Le même bloc, écrit dans la vue Code. Les nombres et les textes sont des valeurs de départ du module, à changer.
+
+```text
+on cast {
+    hitbox(1.5, 1, player = caster)
+}
+```
+
+La grammaire complète est dans [Exemples](/langage/exemples).
+
 ## Entrées
 
 | Sur le graphe | Interne | Type | Défaut | Notes |

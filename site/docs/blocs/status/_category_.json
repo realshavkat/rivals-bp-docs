@@ -1,9 +1,9 @@
 {
   "label": "Statuts",
   "position": 7,
+  "className": "cat-status",
   "link": {
     "type": "generated-index",
     "description": "Étourdir, ralentir, immobiliser."
-  },
-  "className": "cat-status"
+  }
 }

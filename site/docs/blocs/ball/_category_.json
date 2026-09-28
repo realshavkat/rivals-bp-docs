@@ -1,9 +1,9 @@
 {
   "label": "Ballon",
   "position": 4,
+  "className": "cat-ball",
   "link": {
     "type": "generated-index",
     "description": "Lire ou frapper le ballon."
-  },
-  "className": "cat-ball"
+  }
 }

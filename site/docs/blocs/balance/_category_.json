@@ -1,9 +1,9 @@
 {
   "label": "Équilibrage",
   "position": 25,
+  "className": "cat-balance",
   "link": {
     "type": "generated-index",
     "description": "Valeurs prévues pour l'équilibrage."
-  },
-  "className": "cat-balance"
+  }
 }

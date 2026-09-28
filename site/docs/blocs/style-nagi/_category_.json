@@ -1,9 +1,9 @@
 {
   "label": "Style : Nagi",
   "position": 500,
+  "className": "cat-style-nagi",
   "link": {
     "type": "generated-index",
     "description": "Blocs de la famille Style : Nagi."
-  },
-  "className": "cat-style-nagi"
+  }
 }

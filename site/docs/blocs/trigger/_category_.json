@@ -1,9 +1,9 @@
 {
   "label": "Déclencheurs liés",
   "position": 24,
+  "className": "cat-trigger",
   "link": {
     "type": "generated-index",
     "description": "Réagir au prochain essai de technique."
-  },
-  "className": "cat-trigger"
+  }
 }

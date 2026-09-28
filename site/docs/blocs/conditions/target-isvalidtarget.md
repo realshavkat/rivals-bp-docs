@@ -17,6 +17,18 @@ Pas de fil blanc sur ce bloc. On ne fait que lire le résultat.
 
 Chaque passage consomme **5** dans le budget d'exécution (le défaut est 1).
 
+## Exemple
+
+Le même bloc, écrit dans la vue Code. Les nombres et les textes sont des valeurs de départ du module, à changer.
+
+```text
+data {
+    valeur = Target.IsValidTarget(player = caster, maxRange = 500, requireSight = true)
+}
+```
+
+La grammaire complète est dans [Exemples](/langage/exemples).
+
 ## Entrées
 
 | Sur le graphe | Interne | Type | Défaut | Notes |

@@ -1,9 +1,9 @@
 {
   "label": "Style : Otoya",
   "position": 500,
+  "className": "cat-style-otoya",
   "link": {
     "type": "generated-index",
     "description": "Blocs de la famille Style : Otoya."
-  },
-  "className": "cat-style-otoya"
+  }
 }

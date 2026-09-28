@@ -17,6 +17,18 @@ Dans la vue Code, le verbe est [`ball`](/langage/verbes#ball).
 
 Pas de fil blanc sur ce bloc. On ne fait que lire le résultat.
 
+## Exemple
+
+Le même bloc, écrit dans la vue Code. Les nombres et les textes sont des valeurs de départ du module, à changer.
+
+```text
+data {
+    valeur = ball(player = caster)
+}
+```
+
+La grammaire complète est dans [Exemples](/langage/exemples).
+
 ## Entrées
 
 | Sur le graphe | Interne | Type | Défaut | Notes |

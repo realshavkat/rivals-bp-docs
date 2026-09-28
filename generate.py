@@ -582,7 +582,89 @@ def role_of(node):
     return "Action. Le fil blanc entre, le bloc fait son effet, le fil blanc sort."
 
 
-def page_for(node, pins, plain, verb, url):
+def lit_pin(pin):
+    if pin["type"] == "exec":
+        return None
+    if pin.get("enum"):
+        raw = str(pin["enum"][0])
+        if pin["type"] in ("number", "int"):
+            return raw
+        return '"%s"' % raw.replace('"', "")
+    if "default" in pin:
+        raw = str(pin["default"])
+        if pin["type"] == "bool" or raw in ("oui", "non"):
+            return "true" if raw in ("oui", "true") else "false"
+        if pin["type"] == "string":
+            if raw == "":
+                return None
+            return '"%s"' % raw.replace('"', "")
+        if raw == "":
+            return None
+        return raw
+    if pin.get("optional"):
+        return None
+    if pin["type"] in ("number", "int"):
+        return "1"
+    if pin["type"] == "bool":
+        return "true"
+    if pin["type"] == "string":
+        return '"texte"'
+    if pin["type"] == "vector":
+        return "{0, 0, 0}"
+    if pin["type"] == "player":
+        return "caster"
+    return None
+
+
+def format_call(node, verb):
+    by_name = {}
+    for pin in node["inputs"]:
+        if pin["type"] != "exec":
+            by_name[pin["name"]] = pin
+    parts = []
+    used = set()
+    if verb:
+        for arg in verb["args"]:
+            pin = by_name.get(arg)
+            if not pin:
+                continue
+            val = lit_pin(pin)
+            if val is None:
+                val = "1" if pin["type"] in ("number", "int") else '"texte"'
+            parts.append(val)
+            used.add(arg)
+    for pin in node["inputs"]:
+        if pin["type"] == "exec" or pin["name"] in used:
+            continue
+        if pin["type"] == "player" and node["has_ply"]:
+            continue
+        val = lit_pin(pin)
+        if val is None:
+            continue
+        parts.append("%s = %s" % (pin["name"], val))
+        if len(parts) >= 4:
+            break
+    name = verb["name"] if verb else node["kind"]
+    return "%s(%s)" % (name, ", ".join(parts))
+
+
+def code_example(node, verb, event_name):
+    if node["event"]:
+        trig = event_name or "cast"
+        if trig in ("key", "key_release"):
+            head = 'on %s("jump")' % trig
+        elif trig == "event":
+            head = 'on event("signal")'
+        else:
+            head = "on %s" % trig
+        return "```text\n%s {\n    notify(\"déclenché\")\n}\n```" % head
+    call = format_call(node, verb)
+    if node["pure"]:
+        return "```text\ndata {\n    valeur = %s\n}\n```" % call
+    return "```text\non cast {\n    %s\n}\n```" % call
+
+
+def page_for(node, pins, plain, verb, url, event_name=None):
     kind = node["kind"]
     short = kind.split(".")[-1]
     desc = node["description"] or (verb["doc"] if verb else "") or ""
@@ -628,6 +710,14 @@ def page_for(node, pins, plain, verb, url):
     if node["cost"] and node["cost"] != 1:
         lines.append("Chaque passage consomme **%d** dans le budget d'exécution (le défaut est 1)." % node["cost"])
         lines.append("")
+    lines.append("## Exemple")
+    lines.append("")
+    lines.append("Le même bloc, écrit dans la vue Code. Les nombres et les textes sont des valeurs de départ du module, à changer.")
+    lines.append("")
+    lines.append(code_example(node, verb, event_name))
+    lines.append("")
+    lines.append("La grammaire complète est dans [Exemples](/langage/exemples).")
+    lines.append("")
     lines.append("## Entrées")
     lines.append("")
     lines.extend(pin_table(node["inputs"], pins))
@@ -669,10 +759,10 @@ def pin_table(pins_list, labels):
 
 
 def escape_mdx(text):
-    parts = re.split(r"(`[^`]*`)", text)
+    parts = re.split(r"(```[\s\S]*?```|`[^`]*`)", text)
     out = []
-    for i, part in enumerate(parts):
-        if i % 2 == 1:
+    for part in parts:
+        if part.startswith("`"):
             out.append(part)
         else:
             out.append(part.replace("{", "&#123;").replace("}", "&#125;").replace("<", "&lt;"))
@@ -712,6 +802,8 @@ def main():
         by_kind[node["kind"]] = node
     nodes = [by_kind[k] for k in sorted(by_kind)]
     verb_rows = verbs_of(steps)
+    event_rows = events_of(steps)
+    event_by_kind = {row["kind"]: row["name"] for row in event_rows}
     verb_by_kind = {}
     for row in verb_rows:
         verb_by_kind.setdefault(row["kind"], row)
@@ -744,25 +836,31 @@ def main():
             used[file_name] = True
             url = "/blocs/%s/%s" % (folder, file_name)
             urls[node["kind"]] = url
-            body = page_for(node, pins, plain, verb_by_kind.get(node["kind"]), url)
+            body = page_for(node, pins, plain, verb_by_kind.get(node["kind"]), url, event_by_kind.get(node["kind"]))
             body = body.replace("sidebar_position: 1\n", "sidebar_position: %d\n" % (i + 1), 1)
             write(os.path.join(blocs, folder, file_name + ".md"), protect(body))
     langage = os.path.join(DOCS, "langage")
     os.makedirs(langage, exist_ok=True)
     write(os.path.join(langage, "_category_.json"),
           '{\n  "label": "Langage",\n  "position": 3,\n  "className": "cat-langage",\n  "link": {\n    "type": "generated-index",\n    "slug": "/langage",\n    "description": "La vue Code écrit le même graphe. Le texte n\'est jamais exécuté comme du Lua."\n  }\n}\n')
-    verb_lines = ["---", "title: Verbes", "sidebar_position: 1", "description: Chaque mot de la vue Code, et le bloc qu'il devient.", "---", "", "# Verbes", "", "Un verbe est un raccourci. Il devient un bloc. La liste est relue dans le module.", ""]
+    verb_lines = ["---", "title: Verbes", "sidebar_position: 2", "description: Chaque mot de la vue Code, et le bloc qu'il devient.", "---", "", "# Verbes", "", "Un verbe est un raccourci. Il devient un bloc. Pour la grammaire, ouvre [Exemples](/langage/exemples). La liste est relue dans le module.", ""]
     for row in verb_rows:
         url = urls.get(row["kind"], "")
         link = "[`%s`](%s)" % (row["kind"], url) if url else "`%s`" % row["kind"]
         args = ", ".join("`" + a + "`" for a in row["args"]) if row["args"] else "aucun argument obligatoire"
         verb_lines += ["## %s" % row["name"], "", row["doc"], "", "Bloc: %s." % link, "", "Arguments: %s." % args, ""]
+        node = by_kind.get(row["kind"])
+        if node:
+            verb_lines += ["", code_example(node, row, event_by_kind.get(row["kind"])), ""]
     write(os.path.join(langage, "verbes.md"), protect("\n".join(verb_lines)))
-    ev_lines = ["---", "title: Déclencheurs du langage", "sidebar_position: 2", "description: Les noms on cast, on hit, et le bloc événement derrière.", "---", "", "# Déclencheurs du langage", "", "Dans la vue Code, `on cast` réveille un bloc événement.", ""]
-    for row in events_of(steps):
+    ev_lines = ["---", "title: Déclencheurs du langage", "sidebar_position: 3", "description: Les noms on cast, on hit, et le bloc événement derrière.", "---", "", "# Déclencheurs du langage", "", "Dans la vue Code, `on cast` réveille un bloc événement. Chaque nom est expliqué dans [Exemples](/langage/exemples).", ""]
+    for row in event_rows:
         url = urls.get(row["kind"], "")
         link = "[`%s`](%s)" % (row["kind"], url) if url else "`%s`" % row["kind"]
         ev_lines += ["## %s" % row["name"], "", "Bloc: %s." % link, ""]
+        node = by_kind.get(row["kind"])
+        if node:
+            ev_lines += ["", code_example(node, None, row["name"]), ""]
     write(os.path.join(langage, "declencheurs.md"), protect("\n".join(ev_lines)))
     missing = [n["kind"] for n in nodes if not n["inputs"] and not n["outputs"] and not n["event"]]
     print("%d blocs, %d familles, %d verbes" % (len(nodes), len(cats), len(verb_rows)))

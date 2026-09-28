@@ -1,9 +1,9 @@
 {
   "label": "Maths",
   "position": 14,
+  "className": "cat-math",
   "link": {
     "type": "generated-index",
     "description": "Nombres: addition, hasard, chance."
-  },
-  "className": "cat-math"
+  }
 }

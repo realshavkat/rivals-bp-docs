@@ -1,9 +1,9 @@
 {
   "label": "Débogage",
   "position": 29,
+  "className": "cat-debug",
   "link": {
     "type": "generated-index",
     "description": "Blocs de la famille Débogage."
-  },
-  "className": "cat-debug"
+  }
 }

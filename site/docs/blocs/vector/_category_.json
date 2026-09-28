@@ -1,9 +1,9 @@
 {
   "label": "Vecteurs",
   "position": 15,
+  "className": "cat-vector",
   "link": {
     "type": "generated-index",
     "description": "Positions et directions."
-  },
-  "className": "cat-vector"
+  }
 }

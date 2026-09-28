@@ -1,9 +1,9 @@
 {
   "label": "Entités",
   "position": 27,
+  "className": "cat-entities",
   "link": {
     "type": "generated-index",
     "description": "Blocs de la famille Entités."
-  },
-  "className": "cat-entities"
+  }
 }

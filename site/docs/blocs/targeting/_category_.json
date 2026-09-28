@@ -1,9 +1,9 @@
 {
   "label": "Ciblage",
   "position": 10,
+  "className": "cat-targeting",
   "link": {
     "type": "generated-index",
     "description": "Chercher un joueur ou un ballon."
-  },
-  "className": "cat-targeting"
+  }
 }

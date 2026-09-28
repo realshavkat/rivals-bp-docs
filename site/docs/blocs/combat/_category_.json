@@ -1,9 +1,9 @@
 {
   "label": "Combat",
   "position": 8,
+  "className": "cat-combat",
   "link": {
     "type": "generated-index",
     "description": "Dégâts."
-  },
-  "className": "cat-combat"
+  }
 }

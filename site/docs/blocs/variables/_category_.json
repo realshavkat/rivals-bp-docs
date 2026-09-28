@@ -1,9 +1,9 @@
 {
   "label": "Variables",
   "position": 16,
+  "className": "cat-variables",
   "link": {
     "type": "generated-index",
     "description": "Garder une valeur pour plus tard."
-  },
-  "className": "cat-variables"
+  }
 }

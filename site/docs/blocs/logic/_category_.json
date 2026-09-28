@@ -1,9 +1,9 @@
 {
   "label": "Logique",
   "position": 13,
+  "className": "cat-logic",
   "link": {
     "type": "generated-index",
     "description": "Oui et non, combinés."
-  },
-  "className": "cat-logic"
+  }
 }

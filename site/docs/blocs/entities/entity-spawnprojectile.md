@@ -17,6 +17,18 @@ Le fil blanc est l'ordre. Le fil bleu est une valeur. Un fil bleu gagne sur le d
 
 Chaque passage consomme **10** dans le budget d'exécution (le défaut est 1).
 
+## Exemple
+
+Le même bloc, écrit dans la vue Code. Les nombres et les textes sont des valeurs de départ du module, à changer.
+
+```text
+on cast {
+    Entity.SpawnProjectile(model = "texte", pos = {0, 0, 0}, lifetime = 3)
+}
+```
+
+La grammaire complète est dans [Exemples](/langage/exemples).
+
 ## Entrées
 
 | Sur le graphe | Interne | Type | Défaut | Notes |

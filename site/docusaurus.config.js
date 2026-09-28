@@ -51,15 +51,14 @@ const config = {
       items: [
         { to: "/guides/ouvrir", label: "Guides", position: "left" },
         { to: "/blocs", label: "Blocs", position: "left" },
-        { to: "/langage/verbes", label: "Langage", position: "left" },
+        { to: "/langage/exemples", label: "Langage", position: "left" },
         { href: "https://github.com/realshavkat/rivals-bp-docs", label: "GitHub", position: "right" },
       ],
     },
     footer: {
-      style: "dark",
       copyright: "Documentation Rivals BP. Une page par bloc, relue dans le module.",
     },
-    prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+    prism: { theme: prismThemes.github, darkTheme: prismThemes.oneDark },
   },
 };
 

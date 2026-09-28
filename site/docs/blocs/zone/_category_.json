@@ -1,9 +1,9 @@
 {
   "label": "Zones",
   "position": 9,
+  "className": "cat-zone",
   "link": {
     "type": "generated-index",
     "description": "Une zone autour du lanceur."
-  },
-  "className": "cat-zone"
+  }
 }

@@ -1,9 +1,9 @@
 {
   "label": "Conditions",
   "position": 12,
+  "className": "cat-conditions",
   "link": {
     "type": "generated-index",
     "description": "Questions dont la réponse est oui ou non."
-  },
-  "className": "cat-conditions"
+  }
 }

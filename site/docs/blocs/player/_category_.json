@@ -1,9 +1,9 @@
 {
   "label": "Joueur",
   "position": 5,
+  "className": "cat-player",
   "link": {
     "type": "generated-index",
     "description": "Le joueur: position, endurance, message, drapeau."
-  },
-  "className": "cat-player"
+  }
 }

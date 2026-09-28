@@ -1,9 +1,9 @@
 {
   "label": "Interface",
   "position": 18,
+  "className": "cat-ui",
   "link": {
     "type": "generated-index",
     "description": "Textes et barres vus par le joueur."
-  },
-  "className": "cat-ui"
+  }
 }

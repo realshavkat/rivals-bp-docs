@@ -1,9 +1,9 @@
 {
   "label": "Apparence",
   "position": 22,
+  "className": "cat-cosmetic",
   "link": {
     "type": "generated-index",
     "description": "Ce que les autres voient, sans changer la règle."
-  },
-  "className": "cat-cosmetic"
+  }
 }

@@ -1,9 +1,9 @@
 {
   "label": "Enchaînement",
   "position": 1,
+  "className": "cat-flow",
   "link": {
     "type": "generated-index",
     "description": "L'ordre: attendre, choisir, répéter."
-  },
-  "className": "cat-flow"
+  }
 }
