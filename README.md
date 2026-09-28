@@ -10,7 +10,7 @@ Depuis ce dossier, après un changement dans le module Rivals BP (verbes, blocs,
 .\sync.ps1
 ```
 
-Le script relit `../ievele/gamemodes/mangarp/gamemode/modules/rivalsbp`, régénère le catalogue, commit et pousse. Pages republie tout seul.
+Le script relit `../ievele/gamemodes/mangarp/gamemode/modules/rivalsbp`, régénère le catalogue, commit et pousse. GitHub Pages republie le dossier `docs/` de `main` tout seul.
 
 Si le dépôt du jeu n'est pas à côté :
 
