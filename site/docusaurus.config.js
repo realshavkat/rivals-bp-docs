@@ -5,6 +5,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "Rivals BP",
   tagline: "Créer des techniques Blue Lock",
+  favicon: "img/favicon.png",
   url: "https://realshavkat.github.io",
   baseUrl: "/rivals-bp-docs/",
   organizationName: "realshavkat",
@@ -48,6 +49,10 @@ const config = {
     },
     navbar: {
       title: "Rivals BP",
+      logo: {
+        alt: "Rivals BP",
+        src: "img/logo.png",
+      },
       items: [
         { to: "/guides/ouvrir", label: "Guides", position: "left" },
         { to: "/blocs", label: "Blocs", position: "left" },
