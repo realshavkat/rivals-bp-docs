@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Nombres: addition, hasard, chance."
-  }
+  },
+  "className": "cat-math"
 }

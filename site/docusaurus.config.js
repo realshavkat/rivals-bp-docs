@@ -12,6 +12,13 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   i18n: { defaultLocale: "fr", locales: ["fr"] },
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap",
+  ],
+  headTags: [
+    { tagName: "link", attributes: { rel: "preconnect", href: "https://fonts.googleapis.com" } },
+    { tagName: "link", attributes: { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "anonymous" } },
+  ],
   presets: [
     [
       "classic",
@@ -33,6 +40,12 @@ const config = {
   ],
   themeConfig: {
     colorMode: { defaultMode: "dark", respectPrefersColorScheme: false },
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: "Rivals BP",
       items: [

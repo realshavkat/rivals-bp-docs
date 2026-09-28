@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Étapes toutes faites: préparation, effet, projectile."
-  }
+  },
+  "className": "cat-step"
 }

@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Le lancement en cours: lanceur, niveau, paramètre."
-  }
+  },
+  "className": "cat-skill"
 }

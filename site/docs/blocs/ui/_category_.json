@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Textes et barres vus par le joueur."
-  }
+  },
+  "className": "cat-ui"
 }

@@ -1,6 +1,7 @@
 {
   "label": "Guides",
   "position": 2,
+  "className": "cat-guides",
   "link": {
     "type": "generated-index",
     "slug": "/guides",

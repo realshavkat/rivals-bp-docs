@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Étourdir, ralentir, immobiliser."
-  }
+  },
+  "className": "cat-status"
 }

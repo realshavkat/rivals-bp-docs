@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Ce que les autres voient, sans changer la règle."
-  }
+  },
+  "className": "cat-cosmetic"
 }

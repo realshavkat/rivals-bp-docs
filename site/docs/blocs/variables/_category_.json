@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Garder une valeur pour plus tard."
-  }
+  },
+  "className": "cat-variables"
 }

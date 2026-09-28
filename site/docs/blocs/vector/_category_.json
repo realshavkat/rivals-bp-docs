@@ -4,5 +4,6 @@
   "link": {
     "type": "generated-index",
     "description": "Positions et directions."
-  }
+  },
+  "className": "cat-vector"
 }

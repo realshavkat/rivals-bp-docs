@@ -1,6 +1,7 @@
 {
   "label": "Blocs",
   "position": 4,
+  "className": "cat-blocs",
   "link": {
     "type": "generated-index",
     "slug": "/blocs",

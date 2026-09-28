@@ -5,9 +5,17 @@ title: Accueil
 description: Par où commencer pour créer une technique dans Rivals BP.
 ---
 
+import Link from "@docusaurus/Link";
+
 # Rivals BP
 
 L'éditeur pour créer des techniques de Blue Lock. Tu poses des blocs, tu les relies, tu testes sur toi, puis tu publies.
+
+<div className="jump">
+  <Link className="jump-card c-cyan" to="/guides/ouvrir"><b>Guides</b><span>Ouvrir, créer, tester, publier</span></Link>
+  <Link className="jump-card c-violet" to="/blocs"><b>Blocs</b><span>Une page par bloc, par famille</span></Link>
+  <Link className="jump-card c-amber" to="/langage/verbes"><b>Langage</b><span>Les verbes de la vue Code</span></Link>
+</div>
 
 Le graphe est la source de vérité. La vue Code est le même graphe, écrit en langage d'étapes. Ce texte n'est jamais exécuté comme du Lua.
 

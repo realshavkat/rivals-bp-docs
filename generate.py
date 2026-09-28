@@ -724,7 +724,7 @@ def main():
     order = {name: i for i, name in enumerate(CAT_ORDER)}
     cats = sorted(groups, key=lambda c: (order.get(c, 500), c))
     write(os.path.join(blocs, "_category_.json"),
-          '{\n  "label": "Blocs",\n  "position": 4,\n  "link": {\n    "type": "generated-index",\n    "slug": "/blocs",\n    "description": "Une page par bloc. Choisis une famille, puis le bloc. Le fil blanc est l\'ordre, le fil bleu est une valeur."\n  }\n}\n')
+          '{\n  "label": "Blocs",\n  "position": 4,\n  "className": "cat-blocs",\n  "link": {\n    "type": "generated-index",\n    "slug": "/blocs",\n    "description": "Une page par bloc. Choisis une famille, puis le bloc. Le fil blanc est l\'ordre, le fil bleu est une valeur."\n  }\n}\n')
     urls = {}
     for cat in cats:
         folder = slug(cat)
@@ -732,7 +732,7 @@ def main():
         pos = order.get(cat, 500)
         blurb = CAT_BLURB.get(cat, "Blocs de la famille %s." % label)
         write(os.path.join(blocs, folder, "_category_.json"),
-              '{\n  "label": "%s",\n  "position": %d,\n  "link": {\n    "type": "generated-index",\n    "description": "%s"\n  }\n}\n' % (label.replace('"', ""), pos, blurb.replace('"', "")))
+              '{\n  "label": "%s",\n  "position": %d,\n  "className": "cat-%s",\n  "link": {\n    "type": "generated-index",\n    "description": "%s"\n  }\n}\n' % (label.replace('"', ""), pos, folder, blurb.replace('"', "")))
         used = {}
         for i, node in enumerate(sorted(groups[cat], key=lambda n: n["kind"])):
             base = slug(node["kind"])
@@ -750,7 +750,7 @@ def main():
     langage = os.path.join(DOCS, "langage")
     os.makedirs(langage, exist_ok=True)
     write(os.path.join(langage, "_category_.json"),
-          '{\n  "label": "Langage",\n  "position": 3,\n  "link": {\n    "type": "generated-index",\n    "slug": "/langage",\n    "description": "La vue Code écrit le même graphe. Le texte n\'est jamais exécuté comme du Lua."\n  }\n}\n')
+          '{\n  "label": "Langage",\n  "position": 3,\n  "className": "cat-langage",\n  "link": {\n    "type": "generated-index",\n    "slug": "/langage",\n    "description": "La vue Code écrit le même graphe. Le texte n\'est jamais exécuté comme du Lua."\n  }\n}\n')
     verb_lines = ["---", "title: Verbes", "sidebar_position: 1", "description: Chaque mot de la vue Code, et le bloc qu'il devient.", "---", "", "# Verbes", "", "Un verbe est un raccourci. Il devient un bloc. La liste est relue dans le module.", ""]
     for row in verb_rows:
         url = urls.get(row["kind"], "")
