@@ -1,0 +1,33 @@
+<h1>Créer une technique</h1>
+<p class="lead">Le plus court chemin: une notification. Si elle s'affiche, le studio, le graphe et le test fonctionnent.</p>
+<h2>Skill rapide</h2>
+<ol>
+  <li>En haut, <strong>Rapide</strong>.</li>
+  <li>Type: <strong>Notification</strong>.</li>
+  <li>Nom: <span class="kbd">alerte_test</span> (lettres, chiffres, underscore, commence par une lettre).</li>
+  <li><strong>Créer le skill</strong>.</li>
+</ol>
+<p>Le studio pose deux blocs déjà reliés: <em>quand le sort part</em>, puis <em>afficher un texte</em>. Le joueur du second bloc est le lanceur.</p>
+<h2>Tester</h2>
+<p>Sauvegarde, puis <strong>Tester</strong> ou <span class="kbd">F5</span>. Tu dois voir le texte en jeu. Pas de ballon, pas de cible, pas de coût.</p>
+<div class="callout">Un test ignore les anciennes conditions de la technique Lua (ballon, position, cible), le gel, le tir en cours et l'étourdissement. Un vrai lancement, hors test, les respecte encore.</div>
+<h2>Rendre la technique jouable</h2>
+<ol>
+  <li><strong>Valider</strong> (<span class="kbd">Ctrl+Entrée</span>). Corrige ce qui est listé dans Problèmes.</li>
+  <li><strong>Publier</strong>. L'ancienne version est archivée, empreinte SHA-256.</li>
+  <li>Visibilité: <strong>Test</strong> (toi et les autres développeurs propriétaires) ou <strong>Public</strong> (tout le monde).</li>
+</ol>
+<p>Tant que ce n'est pas publié en Public, les joueurs normaux ne l'ont pas. Le brouillon n'est jamais joué.</p>
+<h2>Autres départs</h2>
+<ul>
+  <li>Gauche, onglet <strong>PRESETS</strong>: dash, tir, passe, notification, et d'autres chaînes déjà reliées.</li>
+  <li>Bouton <strong>Skill</strong>: technique vide, ou à partir d'un modèle.</li>
+  <li>Vue <strong>Code</strong>: tu peux aussi l'écrire. Voir <a href="langage.html">le langage</a>.</li>
+</ul>
+<pre><code>skill "alerte_test" {
+    on cast {
+        notify("Technique lancée")
+    }
+}</code></pre>
+<h2>Fiche</h2>
+<p>Nom affiché, description, rang, style, icône, recharge, endurance. Ces champs suivent le même style que le reste du studio: fond sombre, bord clair, focus cyan.</p>

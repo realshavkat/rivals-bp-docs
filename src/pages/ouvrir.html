@@ -1,0 +1,19 @@
+<h1>Ouvrir le studio</h1>
+<p class="lead">Deux portes. Les deux vérifient la même chose: mode développeur, et SteamID propriétaire.</p>
+<h2>Conditions</h2>
+<ol>
+  <li>Ton SteamID64 est dans la liste des propriétaires de Gestion.</li>
+  <li>En jeu, ouvre la console et tape <span class="kbd">dev 1</span>.</li>
+</ol>
+<div class="callout warn">Sans <span class="kbd">dev 1</span>, le studio, l'onglet Studio du menu des techniques, et les boutons TESTER restent cachés. Le serveur refuse aussi la demande.</div>
+<h2>Depuis Gestion</h2>
+<p>Console: <span class="kbd">gestion</span>. Onglet <strong>Rivals BP</strong>. L'éditeur s'ouvre en plein écran.</p>
+<h2>Depuis les techniques</h2>
+<p>Touche <span class="kbd">B</span>. Choisis une technique. Bouton <strong>ÉDITEUR</strong>. L'onglet <strong>Studio</strong> liste les techniques créées dans l'éditeur.</p>
+<h2>Ce qui n'existe plus</h2>
+<p>Il n'y a plus de commande joueur <span class="kbd">bl_rbp</span>. En console serveur seulement: <span class="kbd">rbp_status</span> et <span class="kbd">rbp_reload</span>.</p>
+<h2>Après une mise à jour du code</h2>
+<ul>
+  <li>Fichiers serveur (lancement, blocs, accès): recharge le gamemode.</li>
+  <li>Fichiers de l'éditeur: ferme le studio et rouvre-le. Le client reçoit un nouveau paquet.</li>
+</ul>

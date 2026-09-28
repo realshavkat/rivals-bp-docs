@@ -1,0 +1,28 @@
+<h1>Langage d'étapes</h1>
+<p class="lead">Une deuxième écriture du graphe. Fichier <span class="kbd">.rbs</span>. Le nom dans le projet est langage d'étapes. L'extension ne s'allonge pas.</p>
+<div class="callout">Le serveur découpe le texte en jetons, puis en graphe. Il n'y a pas de <span class="kbd">CompileString</span>. Un mot inconnu est une erreur, pas un appel.</div>
+<h2>Squelette</h2>
+<pre><code>skill "tir_court" {
+    name = "Tir court"
+    style = "isagi"
+    rank = "B"
+    cooldown = 6
+    stamina = 15
+
+    on cast {
+        windup(0.35)
+        shoot(8000, lift = 80)
+        notify("Frappé")
+    }
+}</code></pre>
+<h2>Règles utiles</h2>
+<ul>
+  <li>L'identifiant: lettres, chiffres, <span class="kbd">_</span>, commence par une lettre.</li>
+  <li>Un commentaire <span class="kbd">--</span> au-dessus d'une étape est gardé sur le bloc.</li>
+  <li><span class="kbd">requires</span> sert au vrai lancement. Un test depuis le studio ne bloque pas dessus.</li>
+  <li>Une valeur après une attente se range avec <span class="kbd">set</span>, puis se relit avec <span class="kbd">get</span>.</li>
+  <li>La durée max couvre toute la technique, attentes comprises.</li>
+</ul>
+<h2>Modèles fournis</h2>
+<p>Dash, tir, passe, dribble, buff, debuff, zone, projectile, stun, vol, combo. Ils vivent dans <span class="kbd">lang/templates/*.rbs</span>.</p>
+<p>La liste à jour des verbes est la page <a href="catalogue.html">Catalogue</a>. Elle est relue dans le fichier du langage à chaque génération du site.</p>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivals BP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+<nav>
+  <span class="brand">Rivals BP<small>Documentation</small></span>
+  <a class="item" href="index.html">Accueil</a>
+  <a class="item" href="ouvrir.html">Ouvrir</a>
+  <a class="item" href="creer.html">Créer</a>
+  <a class="item on" href="ecran.html">L'écran</a>
+  <a class="item" href="langage.html">Langage</a>
+  <a class="item" href="catalogue.html">Catalogue</a>
+  <a class="item" href="depannage.html">Dépannage</a>
+</nav>
+<main>
+<h1>Lire l'écran</h1>
+<p class="lead">Le graphe prend le centre. La gauche et la droite flottent par-dessus. Les onglets de techniques restent au-dessus.</p>
+<h2>En haut</h2>
+<p>Recherche, annuler, rétablir, auto-tri, brouillon, tester, sauvegarder, Rapide, Skill. Vert pour sauvegarder. Le bandeau indique aussi si la technique n'est pas sauvegardée.</p>
+<h2>Trois vues du même graphe</h2>
+<table>
+  <tr><th>Vue</th><th>À quoi elle sert</th></tr>
+  <tr><td>Nodes</td><td>Les blocs et les fils. C'est la vue de travail.</td></tr>
+  <tr><td>Code</td><td>Le langage d'étapes. Le texte redevient un graphe. S'il y a une erreur, le graphe ne change pas.</td></tr>
+  <tr><td>Fiche</td><td>Le nom, le rang, le style, la recharge, l'endurance, les paramètres.</td></tr>
+</table>
+<h2>Gauche: retrouver une technique ou un bloc</h2>
+<p>Trois onglets: <strong>TECHNIQUES</strong>, <strong>PRESETS</strong>, <strong>BLOCS</strong>.</p>
+<p>Sous Techniques, deux rangées de tri: <strong>A-Z</strong>, <strong>Type</strong>, <strong>Style</strong>, puis <strong>Rareté</strong> et <strong>Brouillon</strong>.</p>
+<p>Sous Blocs: <strong>Tous</strong>, <strong>Flux</strong>, <strong>Jeu</strong>, <strong>Visuel</strong>, <strong>Valeurs</strong>. Tu peux aussi chercher dans la barre du haut, puis glisser un bloc sur le graphe.</p>
+<p>Clic droit sur une technique: dupliquer, renommer, déplacer de section. Clic droit sur une autosave locale: la supprimer.</p>
+<h2>Droite: la technique, ou le bloc</h2>
+<p>Dès qu'un bloc est sélectionné, deux onglets:</p>
+<ul>
+  <li><strong>Technique</strong>: identifiant, durée max, style, classe, rareté, sauvegarde, problèmes.</li>
+  <li><strong>Bloc</strong>: nom interne, type, réglages des entrées, supprimer.</li>
+</ul>
+<h2>Les fils</h2>
+<ul>
+  <li>Point <strong>blanc</strong>: l'ordre. <em>suite</em> va vers <em>départ</em>.</li>
+  <li>Point <strong>bleu</strong>: une valeur. Le lanceur va vers le joueur de la notification.</li>
+</ul>
+<p>Un fil gagne toujours sur une expression écrite sur la pin. Double-clic sur une action assistée: elle se déplie en blocs simples, avec annulation.</p>
+<h2>En bas à droite</h2>
+<p>La carte miniature. Le rectangle vert est la zone visible, calé dans la carte.</p>
+
+<footer>Généré depuis le module Rivals BP. Relance <span class="kbd">sync.ps1</span> après un changement.</footer>
+</main>
+</div>
+</body>
+</html>
